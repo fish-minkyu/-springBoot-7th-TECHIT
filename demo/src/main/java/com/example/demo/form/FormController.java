@@ -14,11 +14,13 @@ public class FormController {
   }
 
   // 2. 사용자가 전달한 데이터를 처리할 수 있는 메서드
-  /*@RequestMapping(
+  /*
+  @RequestMapping(
     value = "/receive",
     // method 인자로 들어오는 요청의 http method로 한정시킬 수 있다.
     method = RequestMethod.POST
-  )*/
+  )
+  */
   // PostMapping은 명시적으로 POST 요청만 처리한다.
   @PostMapping("/receive")
   public String receiveData(

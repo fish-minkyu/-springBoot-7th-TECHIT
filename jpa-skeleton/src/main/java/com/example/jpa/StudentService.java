@@ -65,7 +65,7 @@ public class StudentService {
             Long id,
             // 나머지 4개의 데이터는 수정할 데이터를 의미
             String name,
-            Integer age,
+            Integer age,w
             String phone,
             String email
     ) {
