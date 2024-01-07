@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Text</title>
+</head>
+<body>
+<!--
+th:text=${message}
+: 요소의 내용을 message로 바꿔주세요.란 의미를 가지고 있는 속성이다.
+
+th:text는 요소의 내용 전체를 바꾼다.
+-->
+<h1 th:text="${message}">여기의 내용을 동적으로 바꾸고 싶습니다.</h1>
+<!--
+요소의 일부만 바꾸고 싶다면 span 태그를 써도 되지만
+[[${data}]]
+-->
+<p>받은 메시지: [[${message}]]</p>
+</body>
+</html>

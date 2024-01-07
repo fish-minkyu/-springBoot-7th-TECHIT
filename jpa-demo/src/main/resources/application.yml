@@ -1,0 +1,19 @@
+# JPA도 어떤 데이터베이스를 사용할지가 설정되어야 한다.
+spring:
+  datasource:
+    # jdbc
+    # sqlite, DB를 사용하고 있다.
+    # db.sqlite, 파일명
+    url: jdbc:sqlite:db.sqlite
+    driver-class-name: org.sqlite.JDBC
+    # username: sa
+    # password: password
+  jpa:
+    hibernate:
+      # ddl-auto: ddl을 관리해주는 옵션
+        # create: 마지막에 만든 테이블이 존재한다면 drop하고 새로 create한다.
+        # update: 필요할 때 수정한다.
+      ddl-auto: update
+    # 생성되는 SQL을 보고 싶을 때 true 설정
+    show-sql: true
+    database-platform: org.hibernate.community.dialect.SQLiteDialect

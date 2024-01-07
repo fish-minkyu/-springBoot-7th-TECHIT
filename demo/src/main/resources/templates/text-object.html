@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Text</title>
+</head>
+<body>
+<!-- 두개의 p요소로 이름과 이메일을 나타내기-->
+<!-- public || getter가 있을 때, 객체.속성으로 접근할 수 있다.-->
+<p>이름: [[${object.name}]]</p>
+<!-- Getter가 존재하는 속성 또는 메서드 사용 가능-->
+<p>email: [[${object.getEmail()}]]</p>
+</body>
+</html>
