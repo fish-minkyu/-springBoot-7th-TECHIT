@@ -15,23 +15,19 @@ public class StudentController {
 
     @GetMapping("create-view")
     public String createView(Model model) {
-      // 학생을 만들 때 지도교수를 선택하기 위해 instructor 리스트
+      // instructorService.readInstructorAll()을 model에 넣은 이유
+      // 학생을 만들때 지도교수를 선택하기 위해 instructor 리스트를 전달하기 위함
         model.addAttribute("instructors", instructorService.readInstructorAll());
         return "student/create";
     }
 
     @PostMapping("create")
     public String create(
-            @RequestParam("name")
-            String name,
-            @RequestParam("age")
-            Integer age,
-            @RequestParam("phone")
-            String phone,
-            @RequestParam("email")
-            String email,
-            @RequestParam("advisor-id")
-            Long advisorId
+            @RequestParam("name") String name,
+            @RequestParam("age") Integer age,
+            @RequestParam("phone") String phone,
+            @RequestParam("email") String email,
+            @RequestParam("advisor-id") Long advisorId // RequestParam의 인자는 name속성의 값
     ) {
         studentService.create(name, age, phone, email, advisorId);
         return "redirect:/student";

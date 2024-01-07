@@ -14,6 +14,6 @@ public class Instructor {
   private String firstName;
   private String lastName;
 
-  @OneToMany(mappedBy = "advisor") // Student 엔티티의 advisor 컬럼을 지칭
+  @OneToMany(mappedBy = "advisor") // Student 엔티티의 advisor 컬럼을 지칭, mappedBy로 명시를 해줘야 함
   private List<Student> advisingStudents;
 }

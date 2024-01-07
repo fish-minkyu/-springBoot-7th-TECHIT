@@ -22,8 +22,8 @@ public class Student {
   private Integer age;
   private String phone;
   private String email;
-  // FK Column -> Join Column
-  @ManyToOne
+  @ManyToOne // Student Entity에다가 Instructor Entity를 넣는 것이다.
+  // FK Column -> Join Column, FK 컬럼을 Join 컬럼이라고 부른다.
 //  @JoinColumn(name = "advisor")
-  private Instructor advisor;
+  private Instructor advisor; // advisor이라 적어도 JPA에서 알아서 advisor_id라고 바꾼다.
 }
