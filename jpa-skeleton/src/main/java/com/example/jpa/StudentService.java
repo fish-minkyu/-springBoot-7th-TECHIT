@@ -1,14 +1,11 @@
 package com.example.jpa;
 
-import com.example.jpa.dto.StudentDto;
 import com.example.jpa.entity.Instructor;
 import com.example.jpa.entity.Student;
 import com.example.jpa.repo.InstructorRepository;
 import com.example.jpa.repo.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,10 +50,10 @@ public class StudentService {
 
     public List<Student> readStudentAll() {
         // 값이 잘 나오는지 확인
-//        List<Student> students = studentRepository.findAll();
-//        for (Student student: students) {
-//            System.out.println(student.toString());
-//        }
+/*        List<Student> students = studentRepository.findAll();
+        for (Student student: students) {
+            System.out.println(student.toString());
+        }*/
         return studentRepository.findAll();
     }
 
@@ -65,7 +62,7 @@ public class StudentService {
             Long id,
             // 나머지 4개의 데이터는 수정할 데이터를 의미
             String name,
-            Integer age,w
+            Integer age,
             String phone,
             String email
     ) {
