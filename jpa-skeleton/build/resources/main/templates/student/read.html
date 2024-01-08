@@ -9,11 +9,10 @@
 <p>나이: [[${student.age}]]</p>
 <p>전화번호: [[${student.phone}]]</p>
 <p>이메일: [[${student.email}]]</p>
-<!--/*
 <p th:if="${student.advisor != null}">지도교수: [[${student.advisor.firstName}]] [[${student.advisor.lastName}]]</p>
-*/-->
 <!-- 홈으로 가는 링크 -->
 <a href="/student">Back</a>
+<!-- 수정 버튼 -->
 <a th:href="@{/student/{id}/update-view(id=${student.id})}">Edit</a>
 <!-- 삭제하기 버튼 -->
 <form th:action="@{/student/{id}/delete(id=${student.id})}" method="post">

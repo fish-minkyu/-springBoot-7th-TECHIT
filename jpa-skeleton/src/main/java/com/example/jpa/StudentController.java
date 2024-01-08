@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("student")
+@RequestMapping("/student")
 public class StudentController {
     private final StudentService studentService;
     private final InstructorService instructorService;
@@ -48,6 +48,8 @@ public class StudentController {
         return "student/read";
     }
 
+    // Update
+    // update-view 응답
     @GetMapping("{id}/update-view")
     public String updateView(
             @PathVariable("id")
@@ -58,18 +60,14 @@ public class StudentController {
         return "student/update";
     }
 
+    // update 실행
     @PostMapping("{id}/update")
     public String update(
-            @PathVariable("id")
-            Long id,
-            @RequestParam("name")
-            String name,
-            @RequestParam("age")
-            Integer age,
-            @RequestParam("phone")
-            String phone,
-            @RequestParam("email")
-            String email
+            @PathVariable("id") Long id,
+            @RequestParam("name") String name,
+            @RequestParam("age") Integer age,
+            @RequestParam("phone") String phone,
+            @RequestParam("email") String email
     ) {
         studentService.update(
                 id, name, age, phone, email);

@@ -21,8 +21,7 @@ public class InstructorController {
 
     @GetMapping("{id}")
     public String readOne(
-            @PathVariable("id")
-            Long id,
+            @PathVariable("id") Long id,
             Model model
     ) {
         model.addAttribute("instructor", instructorService.readInstructor(id));

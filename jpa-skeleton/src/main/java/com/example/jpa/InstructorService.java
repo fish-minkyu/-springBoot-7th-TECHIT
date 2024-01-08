@@ -15,7 +15,8 @@ public class InstructorService {
     private final InstructorRepository instructorRepository;
 
     public Instructor readInstructor(Long id) {
-        return instructorRepository.findById(id).orElse(null);
+        return instructorRepository.findById(id)
+          .orElse(null);
     }
 
     // 반환 타입이 List<InstructorDto>가 아닌 List<Instructor>인 이유
