@@ -1,15 +1,17 @@
 # Spring Boot 수업 (2024.01.03 ~ )
 
 ## 01.03 demo 프로젝트
-### 라이브러리: Spring Web, Thymeleaf
+### Dependencies: Spring Web, Thymeleaf
 - 오전: IoC 컨테이너, DI
 - 오후: Thymeleaf
 
 ### To do list
-- 복습
+- ~~복습~~
+- ~~코드 검토~~
 
 ## 01.04 CRUD 프로젝트
-### 라이브러리: Spring Web, Thymeleaf, lombok. SQLite  
+### Dependencies: Spring Web, Thymeleaf, lombok. SQLite, MyBatis Framework  
+### DB: ArrayList, MyBatis
 ### 수업 내용
 - 오전: ArrayList를 DB삼아 CRUD 수업, thymeleaf를 통해 화면 구현
 - 오후: MyBatis(SQLite 연결)으로 CRUD 
@@ -33,6 +35,7 @@
 - ArrayList와 MyBatis 사용 코드 분리하기 (StudentService)
 
 ## 01.05 jpa-demo & jpa-skeleton 프로젝트
+### Dependencies: Spring Web
 ### 수업 내용
 - 오전 ~ 13:30: jpa-demo 프로젝트
 - 13:30 ~ 오후: jpa-skeleton 프로젝트
