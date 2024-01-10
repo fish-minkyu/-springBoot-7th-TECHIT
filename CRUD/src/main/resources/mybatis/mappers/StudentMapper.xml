@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--어떤 interface와 연결할 xml인지-->
-<mapper namespace="com.example.CRUD.mapper.StudentXMLMapper">
+<mapper namespace="com.example.CRUD.xml.StudentXMLMapper">
     <!-- 여기에 실행하고 싶은 SQL을 넣어줄 수 있다.-->
     <!-- id: 연결하고자 하는 interface의 메서드 이름, 필수!!-->
     <!-- resultType: SQL의 결과를 담기위한 자료형(클래스), 권장!!-->

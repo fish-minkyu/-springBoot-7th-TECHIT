@@ -1,7 +1,5 @@
-package com.example.CRUD;
+package com.example.CRUD.xml;
 
-import com.example.CRUD.mapper.StudentMapper;
-import com.example.CRUD.mapper.StudentXMLMapper;
 import com.example.CRUD.model.StudentDto;
 import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.session.SqlSession;

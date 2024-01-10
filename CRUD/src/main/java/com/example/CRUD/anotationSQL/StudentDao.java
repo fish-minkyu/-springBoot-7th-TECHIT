@@ -1,6 +1,5 @@
-package com.example.CRUD;
+package com.example.CRUD.anotationSQL;
 
-import com.example.CRUD.mapper.StudentMapper;
 import com.example.CRUD.model.StudentDto;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

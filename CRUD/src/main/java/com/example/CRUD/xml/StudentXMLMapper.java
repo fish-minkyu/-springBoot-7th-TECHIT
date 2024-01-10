@@ -1,4 +1,4 @@
-package com.example.CRUD.mapper;
+package com.example.CRUD.xml;
 
 import com.example.CRUD.model.StudentDto;
 

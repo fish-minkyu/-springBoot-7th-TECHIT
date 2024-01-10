@@ -1,4 +1,4 @@
-package com.example.CRUD;
+package com.example.CRUD.ArrayList;
 
 import com.example.CRUD.model.StudentDto;
 import lombok.RequiredArgsConstructor;
@@ -13,44 +13,28 @@ public class StudentService {
   // 현재 몇번째 데이터가 입력되었는지 확인하기 위한 속성
   // 나중에 데이터베이스의 PK역할
   private Long nextId = 1L;
+
   // 데이터를 담기 위한 리스트
   private final List<StudentDto> studentList = new ArrayList<>();
-  public final StudentXMLDao xmlDao;
 
-  // StudentDao(MyBatis)를 추가해주고
-  private final StudentDao dao;
-
-  // 주입받자
-//  public StudentService(StudentDao dao) {
-//    this.dao = dao;
-//  }
-
+  // Create
   // 사용자의 데이터를 받아서 새로운 학생 객체를 생성해 리스트에 저장한다.
-/*  public StudentDto createStudent(String name, String email) {
-    StudentDto newStudent = new StudentDto(nextId, name, email);
-    nextId++;
-    studentList.add(newStudent);
-    return newStudent;
-  }*/
-
-  public void createStudent(String name, String email) {
-    StudentDto dto = new StudentDto();
-    dto.setName(name);
-    dto.setEmail(email);
-    dao.createStudent(dto);
+  public StudentDto createStudent(String name, String email) {
+  StudentDto newStudent = new StudentDto(nextId, name, email);
+  nextId++;
+  studentList.add(newStudent);
+  return newStudent;
   }
 
+  // Read
   // 현재 등록된 모든 학생을 반환한다.
   public List<StudentDto> readStudentAll() {
-    // ArrayList로 반환 (DB 미연결)
-//    return studentList;
-//    return dao.readStudentAll();
-    return xmlDao.readStudentsAll();
+      return studentList;
   }
 
   // 단일 학생 리턴(PK인 id로 조회하는 것이 권장됨)
   // id를 받아서 하나의 학생 데이터를 반환한다.
-/*  public StudentDto readStudent(Long id) {
+  public StudentDto readStudent(Long id) {
     // studentList의 데이터를 하나씩 확인해서
     // getId가 id인 데이터를 반환하고,
     for (StudentDto studentDto : studentList) {
@@ -60,17 +44,12 @@ public class StudentService {
     }
     // 없을 경우 null을 반환한다.
     return null;
-  }*/
-
-  public StudentDto readStudent(Long id) {
-//    return dao.readStudent(id);
-    return xmlDao.resdStudent(id);
   }
 
+  // Update
   // 어떤 학생의 정보를 바꿀건지를 나타내는 id
   // 그 학생의 새로운 정보 name, email
   public StudentDto updateStudent(Long id, String name, String email) {
-    // TODO StudentDao를 사용하게 변경
     for (StudentDto studentDto : studentList) {
       if (studentDto.getId().equals(id)) {
         studentDto.setName(name);
@@ -82,9 +61,9 @@ public class StudentService {
     return null;
   }
 
+  // Delete
   // id를 바탕으로 학생을 제거하는 메서드
   public void deleteStudent(Long id) {
-    // TODO StudentDao를 사용하게 변경
     System.out.println("delete에 도착함");
     // 몇번째 원소를 제거하면 되는지
     int target = -1;
@@ -101,4 +80,6 @@ public class StudentService {
       studentList.remove(target);
     }
   }
+
+
 }

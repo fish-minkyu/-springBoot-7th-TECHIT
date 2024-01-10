@@ -1,18 +1,16 @@
-package com.example.CRUD.mapper;
+package com.example.CRUD.anotationSQL;
 
-import com.example.CRUD.StudentDao;
 import com.example.CRUD.model.StudentDto;
 import org.apache.ibatis.annotations.*;
-
 import java.util.List;
-import java.util.Optional;
+
 
 @Mapper // Mybatis가 SQL을 날리기 위한 매개체로 활용
 public interface StudentMapper {
   // MyBatis는 interface의 메서드에 SQL을 연결시킨다.
   // MyBatis의 세션을 이용해서 interface의 메서드를 실행하면 연결된 SQL이 실행된다.
   @Select("SELECT * FROM student;")
-  List<StudentDto> selectStudentAll(); // 호출 시 SQL 실
+  List<StudentDto> selectStudentAll(); // 호출 시 SQL 실행
 
   // SELECT, INSERT, UPDATE, DELETE 다 있다.
 
