@@ -1,7 +1,6 @@
 package com.example.CRUD.anotationSQL;
 
 import com.example.CRUD.model.StudentDto;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,10 +8,10 @@ import java.util.List;
 @Service
 public class StudentServiceAno {
   // StudentDao(MyBatis)를 추가해주고
-  private final StudentDao dao;
+  private final StudentDaoAno dao;
 
   // 주입받자
-  public StudentServiceAno(StudentDao dao) {
+  public StudentServiceAno(StudentDaoAno dao) {
     this.dao = dao;
   }
 
@@ -36,15 +35,23 @@ public class StudentServiceAno {
   }
 
   // 어떤 학생의 정보를 바꿀건지를 나타내는 id
-  // 그 학생의 새로운 정보 name, email
-/*  public StudentDto updateStudent(Long id, String name, String email) {
+  // 그 학생의 새로운 정보 name, age, phone, email
+  public StudentDto updateStudent(Long id, String name, String email) {
     // TODO StudentDao를 사용하게 변경
-  }*/
+    StudentDto student = dao.readStudent(id);
+    student.setName(name);
+    student.setEmail(email);
+    System.out.println(student);
+
+    dao.updateStudent(student);
+    return readStudent(id);
+  }
 
 
 
   // id를 바탕으로 학생을 제거하는 메서드
-/*  public void deleteStudent(Long id) {
+  public void deleteStudent(Long id) {
     // TODO StudentDao를 사용하게 변경
-  }*/
+    dao.deleteStudent(id);
+  }
 }
