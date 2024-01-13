@@ -13,6 +13,7 @@ import java.util.List;
 public class StudentXMLDao {
   private final SqlSessionFactory sessionFactory;
 
+  // Read
   public List<StudentDto> readStudentsAll() {
     // 사용방식은 annotation 기반과 동일하다.
     try(SqlSession session = sessionFactory.openSession()) {
@@ -28,10 +29,28 @@ public class StudentXMLDao {
     }
   }
 
+  // Create
   public void createStudent(StudentDto dto) {
     try(SqlSession session = sessionFactory.openSession()) {
       StudentXMLMapper mapper = session.getMapper(StudentXMLMapper.class);
       mapper.insertStudent(dto);
+    }
+  }
+
+  // Update
+  public void updateStudent(StudentDto dto) {
+    try(SqlSession session = sessionFactory.openSession()) {
+      StudentXMLMapper mapper = session.getMapper(StudentXMLMapper.class);
+      mapper.updateStudent(dto);
+    }
+  }
+
+
+  // Delete
+  public void deleteStudent(Long id) {
+    try(SqlSession session = sessionFactory.openSession()) {
+      StudentXMLMapper mapper = session.getMapper(StudentXMLMapper.class);
+      mapper.deleteStudent(id);
     }
   }
 }

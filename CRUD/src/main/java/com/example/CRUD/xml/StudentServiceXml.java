@@ -30,14 +30,21 @@ public class StudentServiceXml {
 
   // 어떤 학생의 정보를 바꿀건지를 나타내는 id
   // 그 학생의 새로운 정보 name, email
-/*  public StudentDto updateStudent(Long id, String name, String email) {
+  public StudentDto updateStudent(Long id, String name, String email) {
     // TODO StudentDao를 사용하게 변경
-  }*/
+    StudentDto dto = new StudentDto();
+    dto.setName(name);
+    dto.setEmail(email);
+    xmlDao.updateStudent(dto);
+
+    return xmlDao.resdStudent(id);
+  }
 
 
 
   // id를 바탕으로 학생을 제거하는 메서드
-/*  public void deleteStudent(Long id) {
+   public void deleteStudent(Long id) {
     // TODO StudentDao를 사용하게 변경
-  }*/
+     xmlDao.deleteStudent(id);
+  }
 }

@@ -66,7 +66,7 @@ public class StudentControllerXml {
     return "read";
   }
 
-/*  // Update
+  // Update
   // /update-view/{id}로 요청을 받으면 update.html에 student 정보를 포함해 반환하는 메서드
   // {id}는 path variable이다.
   @GetMapping("/update-view/{id}")
@@ -94,5 +94,5 @@ public class StudentControllerXml {
   public String delete(@PathVariable("id") Long id) {
     service.deleteStudent(id);
     return "redirect:/home";
-  }*/
+  }
 }
