@@ -26,7 +26,7 @@ public class DemoApplication {
 
 		// IoC Container가 관리하고 있는 Bean 객체들을 확인한다.
 		for (String beanName : applicationContext.getBeanDefinitionNames()) {
-			System.out.println(beanName); // 빈 객체들 이름들만 출
+			System.out.println(beanName); // Bean 객체들 이름들만 출력
 			// demoApplication
 			// demoController
 			// 이 2개의 클래스가 bean으로 등록이 되어 사용할 수 있는 상태가 된 것을 알 수가 있다.
