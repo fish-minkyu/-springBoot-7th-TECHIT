@@ -9,13 +9,13 @@ import java.util.List;
 
 // 데이터 통신을 담당하는 클래스임을 Spring에 알려줌
 @Repository
-public class StudentDaoAno {
+public class StudentAnoDao {
   // MyBatis와 데이터베이스를 연결해주는 객체
   private final SqlSessionFactory sessionFactory; // sessionFactory은 sqlsession을 만들기 위한 공장이다.
 
   // 생성자 DI
   // Spring Boot안에 만들어진 SqlSessionFactory Bean이 자동으로 주입된다.
-  public StudentDaoAno(SqlSessionFactory sessionFactory) {
+  public StudentAnoDao(SqlSessionFactory sessionFactory) {
     this.sessionFactory = sessionFactory;
   }
 

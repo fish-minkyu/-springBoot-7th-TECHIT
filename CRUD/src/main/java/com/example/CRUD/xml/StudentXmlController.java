@@ -1,27 +1,24 @@
-package com.example.CRUD.anotationSQL;
+package com.example.CRUD.xml;
 
 import com.example.CRUD.model.StudentDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 // @Slf4j /* <- 롬복으로 만드는 Logger */
 @Controller
-public class StudentControllerAno {
-  //  private static final Logger log
-  //    = LoggerFactory.getLogger(StudentController.class);
+public class StudentXmlController {
+//  private static final Logger log
+//    = LoggerFactory.getLogger(StudentController.class);
 
   // 필드 주입은 다른 상황, 캐스팅 목적에서 에러가 발생할 수 있어 권장하지 않는다.
-  private StudentServiceAno service;
+  private StudentXmlService service;
 
   // @Autowired는 예전엔 항상 쓰는거였지만 요즘 안써도 잘 정상적으로 작동한다. (없어도 됨)
   // 컴파일러 단위에서 무시되는 어노테이션이다.
   // Autowired는 자동 주입이 되는 객체다라는 걸 표현하기 위해 쓰기도 한다.(기능적으로 큰 의미는 없음)
   // 또한, DI할때 생성자가 하나일경우에만 Autowired 생략가능하다
-  public StudentControllerAno(StudentServiceAno studentService) {
+  public StudentXmlController(StudentXmlService studentService) {
     this.service = studentService;
   }
 
@@ -63,7 +60,7 @@ public class StudentControllerAno {
   public String readOne(
     @PathVariable("id") Long id,
     Model model
-  ) {
+    ) {
     StudentDto dto = service.readStudent(id);
     model.addAttribute("student", dto);
     return "read";
