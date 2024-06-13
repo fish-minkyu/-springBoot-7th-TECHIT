@@ -13,9 +13,13 @@ Client-Server Model과 기초 Spring Boot을 연습한 프로젝트다.
 - 2024.01.04 `7주차`
 
 ArrayList를 DB삼아 CRUD를 수업, thymeleaf를 통해 화면 구현을 하였으며  
-MyBatis(SQLite 연결)으로 CRUD을 구현하였다.
+`MyBatis(SQLite 연결)`으로 CRUD을 구현하였다.
 
 ## [jpa-demo](/jpa-demo/README.md)
+
+- 2024.01.05 `7주차`  
+`JPA`
+
 ## [jpa-skeleton](/jpa-skeleton/README.md)
 - 2024.01.05 `7주차`
 
